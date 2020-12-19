@@ -42,3 +42,89 @@ Pour les modèles de données, `il y aura un modèle pour les livres`, comportan
 
 Il faudra également `ajouter du routing à cette application`, permettant l'accès aux différentes parties, 
 `avec une guard pour toutes les routes sauf l'authentification`, empêchant les utilisateurs non authentifiés d'accéder à la bibliothèque.
+
+
+## Structurer l'application
+
+On va créer notre projet : 
+    ng new my-first-project --style=scss --skip-tests=true
+
+--style=scss  = on va travailler avec des fichiers scss
+
+--skip-tests=true = on ne veut utiliser les fichiers de tests
+
+Puis pour cette application, On va utiliser le CLI pour la création des components.  
+L'arborescence sera la suivante :
+
+    ng g c components/auth/signup
+    ng g c components/auth/signin
+    ng g c components/book-list
+    ng g c components/book-list/single-book
+    ng g c components/book-list/book-form
+    ng g c components/header
+    ng g s services/auth/auth
+    ng g s services/books/books
+    ng g s services/auth-guard/auth-guard   
+
+
+`Les services ne sont pas automatiquement mis dans l'array providers d'AppModule `, donc on les ajoute maintenant.  
+Pendant qu'on travaille sur AppModule, `on va ajouté également FormsModule, ReactiveFormsModule et  HttpClientModule`  : `Ne pas oublié d'ajouter les imports en haut du fichier !`
+
+dans app.module.ts
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+    ],
+    providers: [AuthService, BooksService, AuthGuardService],
+
+
+on install bootstrap
+    npm install bootstrap --save
+
+pour ce cour on va utiliser la version 3.3.7 de bootstrap
+    npm install bootstrap@3.3.7 --save
+
+
+dans `styles : [], qui est dans angular.json`  on va mettre le chemin du bootstrap.css qui ce trouve dans node_modules
+
+    "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.css",
+        "styles.css"
+    ],
+
+
+On va intégrer dès maintenant le routing sans guard afin de pouvoir accéder à toutes les sections de l'application pendant le développement :
+
+dans appModules
+    const appRoutes: Routes = [
+        { path: 'auth/signup', component: SignupComponent },
+        { path: 'auth/signin', component: SigninComponent },
+        { path: 'books', component: BookListComponent },
+        { path: 'books/new', component: BookFormComponent },
+        { path: 'books/view/:id', component: SingleBookComponent }
+    ];
+
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+`        RouterModule.forRoot(appRoutes)`
+    ],
+
+
+On va Générer également un dossier appelé models et créer le fichier book.model.ts  :
+
+    export class Book {
+        photo: string;
+        synopsis: string;
+        constructor(public title: string, public author: string) {}
+    }
+
+
+Puis, on prépare HeaderComponent avec un menu de navigation, 
+avec les routerLink et AppComponent qui l'intègre avec le router-outlet  :
+
+
