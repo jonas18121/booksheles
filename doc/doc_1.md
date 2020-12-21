@@ -1,4 +1,4 @@
-# Créez une application complète avec Angular et Firebase
+# Créer une application complète avec Angular et Firebase
 
 
 Ici, nous allons créer une nouvelle application et appliquer des connaissances que nous avons apprises tout au long du cours Angular d'OpenClasRoom, 
@@ -530,18 +530,12 @@ dans `app.modules.ts`
 on met les canActivate pour sécuriser certaines routes
 
     const appRoutes: Routes = [
-    { path: 'auth/signup', component: SignupComponent },
-    { path: 'auth/signin', component: SigninComponent },
-    { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
-    { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
-    { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
-    { path: '', redirectTo: 'books', pathMatch: 'full' },
-    { path: '**', redirectTo: 'books' }
+        { path: 'auth/signup', component: SignupComponent },
+        { path: 'auth/signin', component: SigninComponent },
+        { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
+        { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
+        { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
+        { path: '', redirectTo: 'books', pathMatch: 'full' },
+        { path: '**', redirectTo: 'books' }
     ];
 
-
-
-
-
-
-vidéo stoppé a 33:00
