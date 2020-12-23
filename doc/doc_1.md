@@ -164,6 +164,9 @@ il y a ça aussi, si on veut :
 Dans `app.component.ts`
     import { Component } from '@angular/core';
     `import firebase from '@firebase/app';` import * as firebase from 'firebase';
+    `import '@firebase/auth';`
+    `import '@firebase/database';`
+    `import '@firebase/firestore';`
 
     @Component({
         selector: 'app-root',

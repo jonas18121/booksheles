@@ -2,6 +2,8 @@
 
 ## Base de données
 
+`Créer une base de donnée dans notre compte dans firebase.com`, pour que ça s'enregistre dans le site
+
 Dans ce chapitre, on va créer les fonctionnalités de l'application : 
     - la création, 
     - la visualisation 

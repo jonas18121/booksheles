@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import firebase from '@firebase/app';
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'app-header',
