@@ -5,13 +5,13 @@ import { Component } from '@angular/core';
 import firebase from '@firebase/app';
 
 // import Firebase Authentication (optional)
-import '@firebase/auth';
+import 'firebase/auth';
 
 // import Firebase Realtime Database (optional)
-import '@firebase/database';
+import 'firebase/database';
 
 // import Cloud Firestore (optional)
-import '@firebase/firestore';
+import 'firebase/firestore';
 
 @Component({
   selector: 'app-root',
@@ -25,12 +25,12 @@ export class AppComponent {
     {
         // Your web app's Firebase configuration
         var firebaseConfig = {
-            apiKey: "AIzaSyDtvIO_SEyG8ETGS4qtnCWL0qKf_AYDnBU",
-            authDomain: "booksheles-8317f.firebaseapp.com",
-            projectId: "booksheles-8317f",
-            storageBucket: "booksheles-8317f.appspot.com",
-            messagingSenderId: "212096825665",
-            appId: "1:212096825665:web:7eda10bd0c27ae242849c0"
+            apiKey: "AIzaSyBYGpIToiyw_pOZRaPQfokZNpLX6t-gue8",
+            authDomain: "booksheles-7c89e.firebaseapp.com",
+            projectId: "booksheles-7c89e",
+            storageBucket: "booksheles-7c89e.appspot.com",
+            messagingSenderId: "1008077620161",
+            appId: "1:1008077620161:web:0f4dee5456c26c909fe540"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
