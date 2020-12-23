@@ -26,6 +26,7 @@ export class BookListComponent implements OnInit, OnDestroy {
                 this.books = books;
             }
         );
+        this.booksService.getBooks();
         this.booksService.emitBooks();
     }
 
@@ -48,11 +49,11 @@ export class BookListComponent implements OnInit, OnDestroy {
      * @param {number} id 
      */
     onViewBook(id: number){
-        this.router.navigate(['/books', 'view',])
+        this.router.navigate(['/books', 'view', id])
     }
 
     ngOnDestroy(){
-        this.booksService.booksSubject.unsubscribe();
+        this.booksSubscription.unsubscribe();
     }
 
 }

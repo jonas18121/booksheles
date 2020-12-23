@@ -27,10 +27,14 @@ export class SingleBookComponent implements OnInit {
      * et l'affiche dans son template 
      */
     ngOnInit(): void {
+
         // this.book contient l'instance de new Book('', '')
+        // afin d'éviter les erreurs
         this.book = new Book('', '');
 
         const id = this.route.snapshot.params['id'];
+
+        // +id = c'est pour le caste en tant que number
         this.booksService.getSingleBook(+id).then(
             (book: Book) => {
                 this.book = book;
