@@ -84,7 +84,8 @@ export class BooksService {
             storageRef.delete().then(
                 () => {
                     console.log('Photo supprimer!');
-                },
+                }
+            ).catch(
                 (error) => {
                     console.log('Peut pas supprimer la photo! : ' + error);
                 }

@@ -180,3 +180,42 @@ dans `books.service.ts`
 
 Puisqu'il faut une référence pour supprimer un fichier avec la `méthode delete()`, 
 vous passez l'URL du fichier à refFromUrl() pour en récupérer la référence.
+
+
+
+## Déployer notre application 
+
+Ça y est ! L'application est prête à être déployée.  Si notre serveur de développement tourne encore, 
+on l'arrête et on exécute la commande suivante :
+
+    ng build --prod
+
+
+On utilise le CLI pour générer le package final de production de notre application dans le dossier dist .
+
+
+`Le build` est un moment où plusieurs erreurs peuvent arriver, et ce ne sera pas forcément à cause de votre code. 
+De mon côté, j'ai dû faire une mise à jour du CLI et modifier la version dans les devDependencies dans package.json. 
+Malheureusement, on ne peut pas prévoir quelles erreurs peuvent arriver à ce moment-là, mais vous ne serez jamais les seuls à rencontrer votre problème : copiez l'erreur dans votre moteur de recherche favori et vous trouverez certainement une réponse.
+
+`Le dossier  dist`  contient tous les fichiers à charger sur votre serveur de déploiement pour votre application.
+
+
+
+## Conclusion 
+
+on a réussit à
+
+affichent des données dans le template avec le data binding ;
+
+sont construits de manière dynamique avec les directives ;
+
+communiquent ensemble grâce aux services ;
+
+sont accessibles par un routing personnalisé ;
+
+emploient des Observables pour gérer des flux de données ;
+
+utilisent des formulaires pour exploiter des données fournies par l'utilisateur ;
+
+fonctionnent avec un backend Firebase pour la gestion de l'authentification, des données et des fichiers.
